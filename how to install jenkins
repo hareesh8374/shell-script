@@ -1,0 +1,22 @@
+Pre-requisite
+  java
+  apt install java in ubantu
+  yum install java in linux
+  java --version to check the version that is installed
+
+how to install jenkins?
+  to install jenkins first we need to have java in your local machine.
+  use this command
+  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+To do it automatically we can using shell script for that create a jenkins.sh file in our local machine and give the file excution permissions using chmod 700 jenkins.sh
+to excute any script we use "./" or "sh" sh jenkins.sh using this command we can automatically install jenkins
+after the installation of jenkins using systemctl start jenkins to start the jenkins
+finally go the ec2 dashboard click on the instance where we have launched the jenkins go to security group edit inbound rules and allow 8080 port number
+open a new tab ip address of the instance:8080 and enter to open jenkins in GUI on browser
+the defalut path of jenkins is /var/lib/jenkins
